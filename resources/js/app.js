@@ -93,13 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Magnetic button effect
     document.querySelectorAll('.magnetic-btn').forEach(btn => {
-        btn.addEventListener('mousemove', function(e) {
+        btn.addEventListener('mousemove', function (e) {
             const rect = this.getBoundingClientRect();
             const x = e.clientX - rect.left - rect.width / 2;
             const y = e.clientY - rect.top - rect.height / 2;
             gsap.to(this, { x: x * 0.3, y: y * 0.3, duration: 0.3, ease: 'power2.out' });
         });
-        btn.addEventListener('mouseleave', function() {
+        btn.addEventListener('mouseleave', function () {
             gsap.to(this, { x: 0, y: 0, duration: 0.5, ease: 'elastic.out(1,0.3)' });
         });
     });
