@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,8 +18,11 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     @stack('styles')
+    <style>
+        html, body { height: auto; min-height: 100%; }
+    </style>
 </head>
-<body class="font-sans antialiased bg-[#f2f0eb] text-[rgba(0,0,0,0.87)]">
+<body class="font-sans antialiased bg-[#f2f0eb] text-[rgba(0,0,0,0.87)] overflow-x-hidden overflow-y-auto min-h-screen">
 
     @include('components.navbar')
 
