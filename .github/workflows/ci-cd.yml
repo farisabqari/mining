@@ -1,0 +1,99 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: mining_company
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          extensions: pdo, pdo_mysql, gd
+          tools: composer:v2
+          coverage: none
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Env setup
+        run: |
+          cp .env.example .env
+          php -r "
+            \$env = file_get_contents('.env');
+            \$env = preg_replace('/^DB_CONNECTION=.*/m', 'DB_CONNECTION=mysql', \$env);
+            \$env = preg_replace('/^DB_DATABASE=.*/m', 'DB_DATABASE=mining_company', \$env);
+            \$env = preg_replace('/^DB_USERNAME=.*/m', 'DB_USERNAME=root', \$env);
+            \$env = preg_replace('/^DB_PASSWORD=.*/m', 'DB_PASSWORD=root', \$env);
+            \$env = preg_replace('/^DB_HOST=.*/m', 'DB_HOST=127.0.0.1', \$env);
+            file_put_contents('.env', \$env);
+          "
+
+      - name: Install PHP deps
+        run: composer install --no-interaction --prefer-dist
+
+      - name: Generate key
+        run: php artisan key:generate
+
+      - name: Install JS deps
+        run: npm ci
+
+      - name: Build frontend
+        run: npm run build
+
+      - name: PHP lint (Pint)
+        run: ./vendor/bin/pint --test
+
+      - name: Migrate
+        run: php artisan migrate --force
+
+      - name: Tests
+        run: php artisan test
+
+  deploy:
+    needs: lint-and-test
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to production
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.DEPLOY_HOST }}
+          username: ${{ secrets.DEPLOY_USER }}
+          key: ${{ secrets.DEPLOY_SSH_KEY }}
+          script: |
+            cd ${{ secrets.DEPLOY_PATH }}
+            git pull origin main
+            composer install --no-dev --optimize-autoloader --no-interaction
+            php artisan migrate --force
+            php artisan storage:link
+            php artisan optimize:clear
+            php artisan optimize
+            php artisan route:cache
+            php artisan view:cache
+            php artisan config:cache
+            npm ci --production
+            npm run build
+            sudo systemctl reload php8.2-fpm || true
