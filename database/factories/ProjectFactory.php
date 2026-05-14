@@ -41,7 +41,7 @@ class ProjectFactory extends Factory
             'title' => fake()->randomElement($titles),
             'slug' => fn (array $attrs) => Str::slug($attrs['title'].'-'.fake()->unique()->numberBetween(1, 999)),
             'description' => fake()->paragraphs(3, true),
-            'image' => 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
+            'image' => 'https://picsum.photos/seed/862/800/600',
             'location' => fake()->randomElement($locations),
             'category' => fake()->randomElement($categories),
             'production_capacity' => fake()->numberBetween(100, 5000).' '.fake()->randomElement(['tons/year', 'MT/year', 'oz/year']),

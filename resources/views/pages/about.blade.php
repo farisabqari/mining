@@ -35,7 +35,7 @@
                 </p>
             </div>
             <div data-aos="fade-left">
-                <img src="https://images.unsplash.com/photo-1541888946425-d81bb96040ea?w=800&q=80" alt="Mining operation" class="rounded-[12px] shadow-lg w-full">
+                <img src="https://picsum.photos/seed/612/800/600" alt="Mining operation" class="rounded-[12px] shadow-lg w-full">
             </div>
         </div>
     </div>
@@ -50,7 +50,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 items-center">
             <div class="lg:col-span-1" data-aos="fade-right">
                 <div class="rounded-[12px] overflow-hidden shadow-[0_0_0.5px_rgba(0,0,0,0.14),0_1px_1px_rgba(0,0,0,0.24)]">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80" alt="CEO" class="w-full h-80 object-cover object-center">
+                    <img src="https://picsum.photos/seed/243/800/600" alt="CEO" class="w-full h-80 object-cover object-center">
                 </div>
             </div>
             <div class="lg:col-span-2" data-aos="fade-left">

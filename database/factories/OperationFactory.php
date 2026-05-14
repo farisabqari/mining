@@ -25,7 +25,7 @@ class OperationFactory extends Factory
         return [
             'title' => fake()->randomElement($titles),
             'description' => fake()->paragraphs(2, true),
-            'image' => 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
+            'image' => 'https://picsum.photos/seed/372/800/600',
             'capacity' => fake()->numberBetween(500, 10000).' '.fake()->randomElement(['TPH', 'TPD', 'MTPA']),
             'site_location' => fake()->randomElement([
                 'Site A - East Pit',

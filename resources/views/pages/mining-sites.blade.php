@@ -51,12 +51,12 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             @php
                 $sites = [
-                    ['name' => 'Batu Hijau Mine', 'commodity' => 'Gold, Copper', 'location' => 'West Nusa Tenggara', 'status' => 'Active', 'capacity' => '120M tons/year', 'image' => 'https://images.unsplash.com/photo-1541888946425-d81bb96040ea?w=600&q=80', 'lat' => -8.5269, 'lng' => 118.3142],
-                    ['name' => 'Sorowako Mine', 'commodity' => 'Nickel', 'location' => 'South Sulawesi', 'status' => 'Active', 'capacity' => '80M tons/year', 'image' => 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80', 'lat' => -2.5277, 'lng' => 121.3600],
-                    ['name' => 'Grasberg Mine', 'commodity' => 'Gold, Copper', 'location' => 'Papua', 'status' => 'Active', 'capacity' => '200M tons/year', 'image' => 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80', 'lat' => -4.0523, 'lng' => 137.1170],
-                    ['name' => 'Tanjung Enim', 'commodity' => 'Coal', 'location' => 'South Sumatra', 'status' => 'Active', 'capacity' => '50M tons/year', 'image' => 'https://images.unsplash.com/photo-1541888946425-d81bb96040ea?w=600&q=80', 'lat' => -3.5222, 'lng' => 103.9300],
-                    ['name' => 'Kendawangan', 'commodity' => 'Bauxite', 'location' => 'West Kalimantan', 'status' => 'Development', 'capacity' => '30M tons/year', 'image' => 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80', 'lat' => -1.1833, 'lng' => 110.2333],
-                    ['name' => 'Weda Bay', 'commodity' => 'Nickel', 'location' => 'North Maluku', 'status' => 'Active', 'capacity' => '60M tons/year', 'image' => 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80', 'lat' => 0.5667, 'lng' => 127.5333],
+                    ['name' => 'Batu Hijau Mine', 'commodity' => 'Gold, Copper', 'location' => 'West Nusa Tenggara', 'status' => 'Active', 'capacity' => '120M tons/year', 'image' => 'https://picsum.photos/seed/192/800/600', 'lat' => -8.5269, 'lng' => 118.3142],
+                    ['name' => 'Sorowako Mine', 'commodity' => 'Nickel', 'location' => 'South Sulawesi', 'status' => 'Active', 'capacity' => '80M tons/year', 'image' => 'https://picsum.photos/seed/284/800/600', 'lat' => -2.5277, 'lng' => 121.3600],
+                    ['name' => 'Grasberg Mine', 'commodity' => 'Gold, Copper', 'location' => 'Papua', 'status' => 'Active', 'capacity' => '200M tons/year', 'image' => 'https://picsum.photos/seed/983/800/600', 'lat' => -4.0523, 'lng' => 137.1170],
+                    ['name' => 'Tanjung Enim', 'commodity' => 'Coal', 'location' => 'South Sumatra', 'status' => 'Active', 'capacity' => '50M tons/year', 'image' => 'https://picsum.photos/seed/58/800/600', 'lat' => -3.5222, 'lng' => 103.9300],
+                    ['name' => 'Kendawangan', 'commodity' => 'Bauxite', 'location' => 'West Kalimantan', 'status' => 'Development', 'capacity' => '30M tons/year', 'image' => 'https://picsum.photos/seed/218/800/600', 'lat' => -1.1833, 'lng' => 110.2333],
+                    ['name' => 'Weda Bay', 'commodity' => 'Nickel', 'location' => 'North Maluku', 'status' => 'Active', 'capacity' => '60M tons/year', 'image' => 'https://picsum.photos/seed/594/800/600', 'lat' => 0.5667, 'lng' => 127.5333],
                 ];
             @endphp
             @foreach ($sites as $site)

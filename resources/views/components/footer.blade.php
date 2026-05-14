@@ -6,9 +6,7 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div>
                 <div class="flex items-center gap-3 mb-4">
-                    <div class="w-10 h-10 bg-[#00754A] rounded-lg flex items-center justify-center">
-                        <span class="text-white font-bold text-lg">N</span>
-                    </div>
+                    <img src="{{ asset('images/logomii.png') }}" alt="Logo" class="h-10 w-auto">
                     <span class="text-white font-semibold text-lg">{{ $company?->company_name ?? 'Nusantara Mining' }}</span>
                 </div>
                 <p class="text-[rgba(255,255,255,0.70)] text-sm leading-relaxed">

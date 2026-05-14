@@ -27,7 +27,7 @@
 @section('content')
 {{-- Hero Section --}}
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1920&q=80')] bg-cover bg-center">
+    <div class="absolute inset-0 bg-[url('https://picsum.photos/seed/134/800/600')] bg-cover bg-center">
         <div class="absolute inset-0 hero-gradient"></div>
     </div>
     <div class="relative z-10 text-center max-w-5xl mx-auto px-4 sm:px-6">

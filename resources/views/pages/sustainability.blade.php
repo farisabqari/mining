@@ -43,7 +43,7 @@
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right">
-                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80" alt="Environmental" class="rounded-[12px] shadow-lg w-full">
+                <img src="https://picsum.photos/seed/557/800/600" alt="Environmental" class="rounded-[12px] shadow-lg w-full">
             </div>
             <div class="space-y-6" data-aos="fade-left">
                 <div class="flex items-start gap-4">

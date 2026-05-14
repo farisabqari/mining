@@ -29,7 +29,7 @@ class NewsFactory extends Factory
             'title' => fake()->randomElement($titles),
             'slug' => fn (array $attrs) => Str::slug($attrs['title']),
             'content' => fake()->paragraphs(6, true),
-            'thumbnail' => 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80',
+            'thumbnail' => 'https://picsum.photos/seed/18/800/600',
             'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
         ];
     }

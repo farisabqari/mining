@@ -12,6 +12,7 @@
 <body class="font-sans antialiased bg-[#1E3932] min-h-screen flex items-center justify-center p-4">
     <div class="w-full max-w-md">
         <div class="text-center mb-8">
+            <img src="{{ asset('images/logomii.png') }}" alt="Logo" class="h-16 w-auto mx-auto mb-4">
             <h1 class="text-3xl font-bold text-white">Nusantara Mining</h1>
             <p class="text-[rgba(255,255,255,0.70)] mt-2">Admin Panel</p>
         </div>

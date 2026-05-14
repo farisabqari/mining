@@ -1,7 +1,15 @@
-<aside class="w-64 bg-[#1E3932] text-white flex flex-col shrink-0">
-    <div class="p-6 border-b border-[rgba(255,255,255,0.1)]">
-        <h1 class="text-xl font-bold">Nusantara Mining</h1>
-        <p class="text-sm text-[rgba(255,255,255,0.70)]">Admin Panel</p>
+<aside 
+    class="fixed inset-y-0 left-0 z-50 w-64 bg-[#1E3932] text-white flex flex-col shrink-0 transition-transform duration-300 lg:static lg:translate-x-0"
+    :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
+>
+    <div class="p-6 border-b border-[rgba(255,255,255,0.1)] flex items-center justify-between">
+        <div>
+            <img src="{{ asset('images/logomii.png') }}" alt="Logo" class="h-10 w-auto mb-2">
+            <p class="text-sm text-[rgba(255,255,255,0.70)]">Admin Panel</p>
+        </div>
+        <button @click="sidebarOpen = false" class="lg:hidden text-white/70 hover:text-white transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
     </div>
     <nav class="flex-1 overflow-y-auto p-4 space-y-1">
         <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-[rgba(255,255,255,0.1)] transition {{ request()->routeIs('admin.dashboard') ? 'bg-[rgba(255,255,255,0.1)] font-semibold' : '' }}">

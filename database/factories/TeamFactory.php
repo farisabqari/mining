@@ -27,7 +27,7 @@ class TeamFactory extends Factory
         return [
             'name' => fake()->name(),
             'position' => fake()->randomElement($positions),
-            'photo' => 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80',
+            'photo' => 'https://picsum.photos/seed/50/800/600',
             'description' => fake()->paragraph(2),
         ];
     }
